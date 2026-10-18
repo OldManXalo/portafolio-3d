@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio Martínez — Webs 3D, animación y datos</title>
+  <meta name="description" content="Webs en 3D, animaciones de scroll, shaders a medida y paneles de datos para negocios reales. Proyectos: Data Gest, BarberGest y NailGest.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="Estudio Martínez — Webs 3D">
+  <meta property="og:description" content="Webs que se sienten. Datos que se mueven.">
+  <meta property="og:image" content="assets/proyectos/datagest-portada.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Capa 3D: canvas fijo detrás de todo -->
+  <canvas id="escena" aria-hidden="true"></canvas>
+  <div class="vineta" aria-hidden="true"></div>
+
+  <header class="barra">
+    <a class="marca" href="#inicio" aria-label="Estudio Martínez, inicio">
+      <span class="marca-punto" aria-hidden="true"></span>Estudio Martínez
+    </a>
+    <nav aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a class="barra-cta" href="#contacto">Hablemos</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section id="inicio" class="hero" data-forma="0">
+      <div class="hero-texto">
+        <p class="ojo">Estudio de webs 3D</p>
+        <h1 class="hero-titulo">
+          <span class="linea">Webs que se <em>sienten</em>.</span>
+          <span class="linea">Datos que se mueven.</span>
+        </h1>
+        <p class="hero-sub">Diseño y programo sitios en tres dimensiones, animaciones que responden al scroll y
+          paneles de datos para negocios que necesitan destacar y, además, funcionar todos los días.</p>
+        <div class="acciones">
+          <a class="boton boton-rojo" href="#proyectos">Ver proyectos</a>
+          <a class="boton boton-linea" href="#contacto">Pedir una propuesta</a>
+        </div>
+        <p class="pista" id="pista-girar"><span aria-hidden="true">⟲</span> Arrastra el núcleo para girarlo · baja para recorrer</p>
+      </div>
+      <div class="hero-pie" aria-hidden="true">
+        <span>Three.js</span><span>GLSL</span><span>GSAP</span><span>Next.js</span><span>Supabase</span>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="bloque servicios" data-forma="1">
+      <div class="encabezado">
+        <p class="ojo">01 — Servicios</p>
+        <h2>Lo que construyo para que tu marca <em>no se olvide</em>.</h2>
+      </div>
+      <ol class="lista-servicios">
+        <li>
+          <span class="num">/01</span>
+          <h3>Webs 3D</h3>
+          <p>Escenas en tiempo real con Three.js: modelos que se giran con el ratón, cámaras que avanzan y luces de cine.
+            Cargan rápido y se degradan con elegancia en el móvil.</p>
+        </li>
+        <li>
+          <span class="num">/02</span>
+          <h3>Animaciones de scroll</h3>
+          <p>Relatos que avanzan al ritmo del usuario con GSAP y ScrollTrigger: cada sección transforma la escena,
+            sin saltos ni mareos, y respetando a quien prefiere menos movimiento.</p>
+        </li>
+        <li>
+          <span class="num">/03</span>
+          <h3>Shaders a medida</h3>
+          <p>Materiales GLSL propios —humo, líquidos, fragmentos, brillos— para que la web tenga una firma visual que
+            una plantilla no puede copiar.</p>
+        </li>
+        <li>
+          <span class="num">/04</span>
+          <h3>Dashboards de datos</h3>
+          <p>Paneles que la gente usa de verdad: inventario, agenda, cobros y estadísticas, con base de datos segura,
+            roles de usuario y diseño pensado para el mostrador y el teléfono.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- INTERLUDIO 1: transición de humo -->
+    <section class="interludio" data-humo aria-label="Transición">
+      <p class="interludio-frase">Tres productos reales.<br><em>Construidos de punta a punta.</em></p>
+    </section>
+
+    <!-- PROYECTOS -->
+    <div id="proyectos">
+      <!-- 01 Data Gest -->
+      <article class="bloque proyecto" id="proyecto-datagest" data-forma="2" data-lado="izq" aria-labelledby="t-datagest">
+        <div class="proyecto-texto">
+          <p class="ojo">Proyecto 01 — Inventario multilocal</p>
+          <h2 id="t-datagest">Data Gest</h2>
+          <p class="proyecto-lema">Cada equipo, con su <em>serial</em>.</p>
+          <p>Sistema de inventario para tiendas de tecnología con depósito y varias sucursales. Cada celular, audífono o
+            router es una unidad con nombre propio: dónde está, cuánto costó y quién lo movió. Pensado para el comercio
+            venezolano, con dólares y bolívares a la vista.</p>
+          <ul class="rasgos">
+            <li>Stock por unidad y por serial/IMEI: las cantidades se cuentan, no se escriben.</li>
+            <li>Traslados entre depósito y locales con rastro de quién y cuándo.</li>
+            <li>Caja diaria con pago móvil, puntos de venta, divisas y financieras con cuotas.</li>
+            <li>Tasa Bs/USD congelada en cada operación.</li>
+            <li>Multi-negocio: cada cliente ve solo sus datos (seguridad a nivel de fila).</li>
+            <li>Nota de entrega y lista de precios imprimibles; lector de código de barras.</li>
+          </ul>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>Next.js</li><li>React</li><li>Supabase · Postgres</li><li>Tailwind</li><li>Vercel</li><li>Partículas WebGL</li>
+          </ul>
+          <a class="enlace" href="https://data-gest-ten.vercel.app" target="_blank" rel="noopener">Ver la web publicada <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="galeria">
+          <figure class="captura captura-grande">
+            <img src="assets/proyectos/datagest-portada.webp" width="1440" height="900" loading="lazy" decoding="async"
+              alt="Portada de Data Gest: esfera de partículas azules y el titular «Cada equipo, con su serial».">
+            <figcaption>Portada con esfera de partículas interactiva</figcaption>
+          </figure>
+          <figure class="captura">
+            <img src="assets/proyectos/datagest-entrar.webp" width="1440" height="900" loading="lazy" decoding="async"
+              alt="Pantalla de acceso de Data Gest con las tres ideas clave: stock por unidad, tasa congelada y rastro de todo.">
+            <figcaption>Acceso del personal</figcaption>
+          </figure>
+          <figure class="captura captura-movil">
+            <img src="assets/proyectos/datagest-movil.webp" width="780" height="1688" loading="lazy" decoding="async"
+              alt="Data Gest en un teléfono.">
+            <figcaption>En el móvil</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 02 BarberGest -->
+      <article class="bloque proyecto" id="proyecto-barbergest" data-forma="3" data-lado="der" aria-labelledby="t-barbergest">
+        <div class="proyecto-texto">
+          <p class="ojo">Proyecto 02 — Gestión de barberías</p>
+          <h2 id="t-barbergest">BarberGest</h2>
+          <p class="proyecto-lema">Llena las sillas de tu <em>barbería</em>.</p>
+          <p>Software de reservas, agenda y comisiones para barberías. El cliente aparta su corte con un abono desde el
+            directorio, el dueño ve una columna por barbero y, al cerrar la semana, el reparto de cada uno sale solo,
+            en bolívares y en dólares.</p>
+          <ul class="rasgos">
+            <li>Reservas online con abono y cuadre de lo que llegó por la web.</li>
+            <li>Agenda con una columna por barbero y sillas libres en vivo.</li>
+            <li>Pagos y cierres: comisión por servicio, recibos imprimibles y exportación a CSV.</li>
+            <li>Doble moneda Bs/$ con la tasa del día.</li>
+            <li>Clientes, reseñas, inventario de productos y varias sucursales.</li>
+            <li>Modo tablet para la recepción: tres toques por cliente.</li>
+          </ul>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>HTML · JS sin framework</li><li>Supabase</li><li>Leaflet (mapa)</li><li>PWA tablet</li><li>Vercel</li>
+          </ul>
+          <p class="nota-oferta"><strong>Prueba gratis de 30 días</strong>, sin tarjeta.</p>
+          <a class="enlace" href="https://barber-gest.vercel.app" target="_blank" rel="noopener">Ver la web publicada <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="galeria">
+          <figure class="captura captura-grande">
+            <img src="assets/proyectos/barbergest-portada.webp" width="1280" height="800" loading="lazy" decoding="async"
+              alt="Portada pública de BarberGest con el titular «Llena las sillas de tu barbería» y un teléfono con el directorio.">
+            <figcaption>Portada pública y directorio</figcaption>
+          </figure>
+          <figure class="captura">
+            <img src="assets/proyectos/barbergest-agenda.webp" width="1280" height="800" loading="lazy" decoding="async"
+              alt="Agenda de BarberGest con una columna por barbero y citas de colores según su estado.">
+            <figcaption>Agenda por barbero</figcaption>
+          </figure>
+          <figure class="captura">
+            <img src="assets/proyectos/barbergest-pagos.webp" width="1280" height="800" loading="lazy" decoding="async"
+              alt="Pagos y cierres de BarberGest: facturado, total a barberos y lo que queda a la barbería, en bolívares y dólares.">
+            <figcaption>Pagos y cierres en Bs y $</figcaption>
+          </figure>
+          <figure class="captura">
+            <img src="assets/proyectos/barbergest-inventario.webp" width="1280" height="800" loading="lazy" decoding="async"
+              alt="Inventario de productos de BarberGest.">
+            <figcaption>Inventario de productos</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- 03 NailGest -->
+      <article class="bloque proyecto" id="proyecto-nailgest" data-forma="4" data-lado="izq" aria-labelledby="t-nailgest">
+        <div class="proyecto-texto">
+          <p class="ojo">Proyecto 03 — Citas para manicuristas</p>
+          <h2 id="t-nailgest">NailGest</h2>
+          <p class="proyecto-lema">Tu agenda, tan <em>pulida</em> como tus uñas.</p>
+          <p>Un enlace para la bio de Instagram con servicios, fotos, preguntas frecuentes y reseñas. Las clientas
+            reservan solas con la duración real de cada técnica, y la manicurista deja de repetir lo mismo por WhatsApp.
+            Su portada tiene un frasco de esmalte en 3D que se gira y se fragmenta con el scroll.</p>
+          <ul class="rasgos">
+            <li>Perfil público con galería, técnicas, políticas y reseñas verificadas.</li>
+            <li>Reservas con duración variable, retiro de producto y margen entre citas.</li>
+            <li>Anticipo opcional con comprobante y confirmación de la manicurista.</li>
+            <li>Lista de espera: avisa cuando se libera un hueco.</li>
+            <li>Agenda de día y semana, ingresos y estadísticas por salón y por manicurista.</li>
+            <li>164 pruebas automáticas de la base de datos.</li>
+          </ul>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>Next.js 16</li><li>Supabase</li><li>Three.js</li><li>GSAP · ScrollTrigger</li><li>Shader GLSL</li><li>Tailwind 4</li>
+          </ul>
+        </div>
+        <div class="galeria">
+          <figure class="captura captura-grande">
+            <img src="assets/proyectos/nailgest-portada.webp" width="1440" height="900" loading="lazy" decoding="async"
+              alt="Portada 3D de NailGest: frasco de esmalte y uñas en abanico con el titular «Tu agenda, tan pulida como tus uñas».">
+            <figcaption>Portada 3D con frasco de esmalte</figcaption>
+          </figure>
+          <figure class="captura">
+            <img src="assets/proyectos/nailgest-estadisticas.webp" width="1280" height="1029" loading="lazy" decoding="async"
+              alt="Estadísticas de NailGest para todo el salón: citas completadas, ingresos y clientas nuevas por manicurista.">
+            <figcaption>Estadísticas del salón</figcaption>
+          </figure>
+          <figure class="captura captura-movil">
+            <img src="assets/proyectos/nailgest-perfil-movil.webp" width="390" height="540" loading="lazy" decoding="async"
+              alt="Perfil público de una manicurista en el móvil.">
+            <figcaption>Perfil para la bio</figcaption>
+          </figure>
+          <figure class="captura captura-movil">
+            <img src="assets/proyectos/nailgest-reserva-movil.webp" width="390" height="1051" loading="lazy" decoding="async"
+              alt="Paso de reserva en NailGest: elegir día con huecos libres y la hora.">
+            <figcaption>Reserva en tres pasos</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+
+    <!-- INTERLUDIO 2 -->
+    <section class="interludio" data-humo aria-label="Transición">
+      <p class="interludio-frase">Nada de plantillas.<br><em>Cada pieza, a medida.</em></p>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="bloque proceso" data-forma="5">
+      <div class="encabezado">
+        <p class="ojo">02 — Proceso</p>
+        <h2>Cuatro pasos, <em>sin sorpresas</em>.</h2>
+      </div>
+      <ol class="pasos">
+        <li><span class="num">01</span><h3>Escuchar</h3><p>Una llamada para entender tu negocio, a quién le vendes y qué
+          tiene que lograr la web. Salgo con objetivos claros, no con suposiciones.</p></li>
+        <li><span class="num">02</span><h3>Diseñar</h3><p>Dirección visual, estructura y un prototipo de la escena 3D
+          para que veas el movimiento antes de construir nada.</p></li>
+        <li><span class="num">03</span><h3>Construir</h3><p>Código limpio, rendimiento medido en móvil y accesibilidad
+          desde el primer día. Revisiones cortas sobre la web real.</p></li>
+        <li><span class="num">04</span><h3>Lanzar y acompañar</h3><p>Publicación, dominio y analítica. Te enseño a
+          usarla y quedo disponible para mejoras.</p></li>
+      </ol>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="bloque contacto" data-forma="6">
+      <p class="ojo">03 — Contacto</p>
+      <h2 class="contacto-titulo">¿Tu negocio merece una web <em>que se recuerde</em>?</h2>
+      <p class="contacto-sub">Cuéntame qué tienes en mente. Respondo con una propuesta y un plazo concretos.</p>
+      <div class="acciones">
+        <a class="boton boton-rojo" id="btn-correo" href="#">Escríbeme un correo</a>
+        <a class="boton boton-linea" id="btn-whatsapp" href="#" target="_blank" rel="noopener">Hablemos por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <span>© <span id="anio">2026</span> Estudio Martínez</span>
+    <span>Hecho a mano con Three.js, GLSL y GSAP</span>
+  </footer>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="js/config.js"></script>
+  <script type="module" src="js/escena.js"></script>
+</body>
+</html>
