@@ -1,12 +1,11 @@
 /*
  * Datos de contacto del portafolio.
- * PENDIENTE: el señor Martínez debe poner aquí su correo y su WhatsApp reales.
  * WhatsApp va en formato internacional sin "+" ni espacios (ej. 584121234567).
  * Los botones solo abren el correo o WhatsApp del visitante: la web no envía nada.
  */
 window.CONTACTO = {
-  correo: 'tu-correo@ejemplo.com',
-  whatsapp: '580000000000',
+  correo: 'xalomrtnz@gmail.com',
+  whatsapp: '584121125794',
   asunto: 'Quiero una web 3D',
   mensaje: 'Hola, vi tu portafolio y quiero hablar de una web para mi negocio.'
 };
