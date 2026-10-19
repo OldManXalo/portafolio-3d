@@ -2,8 +2,8 @@
 :root {
   --fondo: #050505;
   --tinta: #f4f2ef;
-  --tenue: #bdbbb8;
-  --mas-tenue: #8d8b88;
+  --tenue: #e4e2df;
+  --mas-tenue: #b9b7b4;
   --linea: rgba(244, 242, 239, 0.12);
   --rojo: #e3262f;
   --rojo-vivo: #ff3b3b;
@@ -100,7 +100,7 @@ main { position: relative; z-index: 2; }
 .boton:hover { transform: translateY(-2px); }
 .boton-rojo { background: var(--rojo); color: #fff; box-shadow: 0 10px 40px -12px rgba(227, 38, 47, 0.7); }
 .boton-rojo:hover { background: var(--rojo-vivo); }
-.boton-linea { border: 1px solid rgba(244, 242, 239, 0.28); background: #0a0a0a; }
+.boton-linea { border: 1px solid rgba(244, 242, 239, 0.28); background: rgba(5, 5, 5, 0.35); backdrop-filter: blur(6px); }
 .boton-linea:hover { border-color: var(--tinta); }
 .pista { margin-top: 30px; font-family: var(--mono); font-size: 12px; color: var(--mas-tenue); letter-spacing: 0.04em; }
 .hero-pie {
@@ -136,7 +136,7 @@ main { position: relative; z-index: 2; }
 .rasgos li { padding: 12px 0 12px 22px; border-bottom: 1px solid var(--linea); font-size: 15px; color: var(--tenue); position: relative; }
 .rasgos li::before { content: ''; position: absolute; left: 2px; top: 22px; width: 8px; height: 1px; background: var(--rojo-vivo); }
 .stack { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 8px; }
-.stack li { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; padding: 6px 11px; border: 1px solid var(--linea); border-radius: 999px; color: var(--tenue); background: #0a0a0a; }
+.stack li { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; padding: 6px 11px; border: 1px solid var(--linea); border-radius: 999px; color: var(--tenue); background: rgba(5, 5, 5, 0.5); }
 .nota-oferta { margin-bottom: 18px; font-size: 15px; color: var(--tinta); }
 .nota-oferta strong { color: var(--rojo-vivo); font-weight: 500; }
 .enlace { display: inline-flex; gap: 8px; font-size: 15px; text-decoration: none; border-bottom: 1px solid var(--rojo); padding-bottom: 3px; }
@@ -214,12 +214,7 @@ main { position: relative; z-index: 2; }
   .interludio { min-height: 70vh; }
 }
 
-/* Cajas de texto opacas: legibilidad sobre la escena 3D (sobre todo en móvil) */
-.hero-texto, .proyecto-texto, .encabezado, .contacto-caja, .lista-servicios li, .pasos li {
-  background: #0a0a0a;
+/* Legibilidad sin fondo: texto blanco con sombra suave sobre la escena */
+.hero-texto, .proyecto-texto, .encabezado, .lista-servicios li, .pasos li, .contacto-caja {
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.7);
 }
-.hero-texto, .proyecto-texto, .encabezado, .contacto-caja {
-  padding: clamp(20px, 3vw, 36px); border: 1px solid var(--linea); border-radius: 16px;
-}
-.lista-servicios li, .pasos li { padding-left: 24px; }
-.contacto > * { text-shadow: none; }
