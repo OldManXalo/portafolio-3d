@@ -44,8 +44,9 @@ NailGest · proceso · contacto (solo botones mailto y WhatsApp; la web no enví
 3. **BarberGest — días de prueba:** el portafolio dice **30 días gratis** (lo que dicen el encargo y el código local),
    pero la web publicada `barber-gest.vercel.app` todavía dice **15 días**. Hay que publicar la versión local de
    BarberGest o cambiar el texto aquí. La captura de portada se hizo desde el código local por eso.
-4. **Enlaces en vivo:** Data Gest (`data-gest-ten.vercel.app`) y BarberGest llevan botón "Ver la web publicada".
-   NailGest no lleva enlace porque aún no está desplegada. Ojo: `data-gest.vercel.app` (sin "-ten") es una web ajena.
+4. **Enlaces en vivo:** las tres llevan botón "Ver la web publicada": Data Gest (`data-gest-ten.vercel.app`),
+   BarberGest (`barber-gest.vercel.app`) y NailGest (`nailgest.vercel.app`), las tres comprobadas con 200.
+   Ojo: `data-gest.vercel.app` (sin "-ten") es una web ajena.
 5. No lleva precios de ningún producto; NailGest no menciona prueba gratis.
 
 ## Capturas
